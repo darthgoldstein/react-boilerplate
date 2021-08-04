@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": false,
+    "sourceMap": true,
+    "strict": false,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "noEmit": false,
+    "preserveWatchOutput": true,
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@api/*": ["./src/api/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@images/*": ["./src/images/*"],
+      "@router/*": ["./src/router/*"],
+      "@state/*": ["./src/state/*"],
+      "@themes/*": ["./src/themes/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["./.eslintrc.js", "./src/**/*"]
+}
