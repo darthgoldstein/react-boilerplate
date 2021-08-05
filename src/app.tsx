@@ -1,11 +1,14 @@
 import React from 'react';
-import { CssBaseline } from '@material-ui/core';
+import { Box, CssBaseline } from '@material-ui/core';
+import { ItemList } from '@components/itemList.component';
+import { ItemAddForm } from '@components/itemAddForm.component'
 
 export const App = () => {
   return (
-    <div>
+    <Box mt={2} display="flex" flexDirection="column" alignItems="center" width="100%" px={5}>
       <CssBaseline />
-      Boiler Plate
-    </div>
+      <ItemAddForm />
+      <ItemList />
+    </Box>
   );
 };
