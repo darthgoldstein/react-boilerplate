@@ -1,14 +1,26 @@
-import React from 'react';
-import { Box, CssBaseline } from '@material-ui/core';
-import { ItemList } from '@components/itemList.component';
-import { ItemAddForm } from '@components/itemAddForm.component'
+import React, { useEffect } from 'react';
+import { CssBaseline } from '@material-ui/core';
+import ItemsApi from '@api/items.api';
+import { appState } from '@state/appState.store';
+import { RouteSwitcher } from '@router/routeSwitcher.component';
+import { BrowserRouter } from 'react-router-dom';
 
 export const App = () => {
+  useEffect(() => {
+    getItems();
+  }, []);
+
+  const getItems = async () => {
+    const items = await ItemsApi.getItems();
+    appState.items = items;;
+  };
+
   return (
-    <Box mt={2} display="flex" flexDirection="column" alignItems="center" width="100%" px={5}>
+    <>
       <CssBaseline />
-      <ItemAddForm />
-      <ItemList />
-    </Box>
+      <BrowserRouter>
+        <RouteSwitcher />
+      </BrowserRouter>
+    </>
   );
 };
