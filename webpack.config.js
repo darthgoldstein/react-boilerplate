@@ -3,19 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const path = require('path');
 
-const isProd = process.env.NODE_ENV === 'production';
-const baseUrl = isProd ? 'https://somewebsite.com' : 'http://localhost:3000';
-const apiUrl = `${baseUrl}/api`;
+const isProduction = process.env.NODE_ENV === 'production';
+const apiUrl = 'http://localhost:3005';
 
-const devOptions = {
+const developmentOptions = {
   mode: 'development',
   devtool: 'inline-source-map',
 };
 
-const prodOptions = {
+const productionOptions = {
   mode: 'production',
 };
-const options = isProd ? prodOptions : devOptions;
+const options = isProduction ? productionOptions : developmentOptions;
 
 module.exports = {
   ...options,
